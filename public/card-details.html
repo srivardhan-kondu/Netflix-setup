@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Payment</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #141414, #000);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .payment-container {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            color: #fff;
+        }
+        .payment-container h1 {
+            color: #e50914;
+            margin-bottom: 20px;
+        }
+        .payment-container .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .payment-container .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .payment-container .form-group input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid #444;
+            border-radius: 5px;
+            background-color: #222;
+            color: #fff;
+            outline: none;
+            margin-bottom: 10px;
+        }
+        .payment-container .form-group input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #e50914;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .payment-container .form-group input[type="submit"]:hover {
+            background-color: #f40612;
+        }
+        .payment-container .terms {
+            font-size: 12px;
+            color: #aaa;
+            text-align: left;
+            margin-top: 10px;
+        }
+        .payment-container .terms a {
+            color: #e50914;
+            text-decoration: none;
+        }
+        .payment-container .terms a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="payment-container">
+        <h1>Subscribe</h1>
+        <form action="/submit-payment" method="post">
+            <div class="form-group">
+                <label for="card-number">Card Number</label>
+                <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" required>
+            </div>
+            <div class="form-group">
+                <label for="expiry-date">Expiry Date</label>
+                <input type="month" id="expiry-date" name="expiry-date" required>
+            </div>
+            <div class="form-group">
+                <label for="cvv">CVV</label>
+                <input type="number" id="cvv" name="cvv" placeholder="123" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Subscribe Now">
+            </div>
+            <div class="terms">
+                By clicking "Subscribe Now", you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+            </div>
+        </form>
+    </div>
+</body>
+</html>
